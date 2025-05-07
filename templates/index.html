@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reddit Fake News Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Fake News Detector</h1>
+
+    {% if not prediction %}
+    <form method="post">
+        <input type="text" name="title" placeholder="Enter Reddit Post Content" required><br>
+        <input type="submit" value="Detect">
+    </form>
+    {% else %}
+    <h2>Prediction: {{ prediction }}</h2>
+    <form method="get">
+        <button type="submit">Try Another</button>
+    </form>
+    {% endif %}
+</body>
+</html>
